@@ -15,8 +15,28 @@ Then came a flash of inspiration: why not repurpose those old floppy disks? What
 ## What is Floppify?
 Floppify is a project that lets you use floppy disks to load Spotify playlists. It’s a fun, retro-tech way to interact with modern streaming services by using an old-fashioned medium.
 
-![image](https://github.com/user-attachments/assets/ff97600c-7f73-45d3-9f3e-e747a6f16403)
+(Part of joy of this project is finding and printing your own labels / disk art!)
 
+![image](https://github.com/user-attachments/assets/0318217a-2354-486d-9027-045e9891104c)
+
+
+
+# In a nutshell...
+
+Run the script.  
+It will authenticate against your Spotify credentials (a browser window will load where you'll need to authorise the app).
+From there, you'll be given a list of the devices you use with your spotify account - make a note of the ID of the device you want to use and pump that into the `.env` file.  
+Now you've chosen a preferred device, run the script again.  
+A GUI will launch and the main loop will poll for the insertion of a disk.  
+These disks must contain a `playlist.txt` file which contains link(s) to a spotify playlist/album.  
+If this disk has never been loaded (or read by the program before) a uniq ID will be generated and stored in the root of the floppy disk under a file called `unique_id.txt`.  
+This ID is stored internally and used to ensure that the main loop doesn't pick up a new playlist everytime it polls for a new disk (which is every 5 seconds) - this fixed one fo the first bugs!  
+On detection of an inserted disk, the program will stream the playlist from spotify (or, if there a multiple playlist links, it will pick one at random).  
+If a disk is ejected, the music will stop the next time the main loop loops (within 5 seconds) and the console and GUI will be updated to say that nothing is available.  
+Put in another disk and process repeats.  It's all pretty simple :) 
+
+
+# The GUI
 
 No Disk
 
@@ -109,10 +129,6 @@ python floppify.py
 ## Contributing
 If you have ideas to enhance floppify, feel free to submit a pull request or open an issue!
 
-## Labels
-Part of joy of this project is finding and printing your own labels / disk art!
-
-![image](https://github.com/user-attachments/assets/0318217a-2354-486d-9027-045e9891104c)
 
 
 
