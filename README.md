@@ -19,12 +19,14 @@ Floppify is a project that lets you use floppy disks to load Spotify playlists. 
 
 
 No Disk
+
 ![image](https://github.com/user-attachments/assets/96d0027e-8d72-41b2-a1ab-7f9e689da4ab)
 
 With Disk
+
 ![image](https://github.com/user-attachments/assets/7b84f136-3383-4f03-9c5e-6c15ba656cd3)
 
-
+I should mention that the gui isn't actually required, the entire thing can run silently, but I thought `why not` !
 
 
 ## How It Works
@@ -101,6 +103,10 @@ python floppify.py
 ## Contributing
 If you have ideas to enhance floppify, feel free to submit a pull request or open an issue!
 
-## License
-This project is licensed under the MIT License.
+## Labels
+Part of joy of this project is finding and printing your own labels / disk art!
+
+![image](https://github.com/user-attachments/assets/0318217a-2354-486d-9027-045e9891104c)
+
+
 
