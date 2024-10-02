@@ -83,6 +83,12 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+Font
+This project uses the LED Dot-Matrix font available at DaFont:
+https://www.dafont.com/led-dot-matrix.font
+
+You'll need to download the TTF file and install it - alternatively, use a different font (courier for example should work out of the box) :) 
+
 Set up your Spotify credentials:
 
 Create a new app on the Spotify Developer Dashboard.
