@@ -56,6 +56,7 @@ https://developer.spotify.com/
 
 You’ll need a Spotify Developer account to create a new app and generate a client ID and secret. This will allow the script to authenticate with Spotify.
 
+
 Make sure your redirect URL is set to `http://localhost:8888/callback`
 ![image](https://github.com/user-attachments/assets/3daafb35-1595-4e0c-b860-71d755ec2a72)
 
@@ -66,9 +67,15 @@ The script checks your LOCAL_DEVICE_ID on the first run. If it’s not already s
 
 ![image](https://github.com/user-attachments/assets/472a40bb-57f2-4e2a-876f-3d5c9b102667)
 
+![image](https://github.com/user-attachments/assets/376c8959-1ca7-44b4-afbd-fb50ad2bd73a)
+
+
 
 ## Drive Setup
-By default, the script uses drive A: (the traditional floppy drive letter). If you’re using another drive, like a USB floppy emulator or USB drive, simply change the drive letter in the `.ENV` file.
+By default, the script uses drive A: (the traditional floppy drive letter). If you’re using another drive, like a USB floppy emulator or USB drive, simply change the drive letter in the `.env file.
+
+
+![image](https://github.com/user-attachments/assets/285c18f8-8690-4ae2-ba43-ed5b459559c9)
 
 ## Playlist File
 Create a file called playlist.txt on the floppy disk.  In this file, paste links to the Spotify playlists or albums you want, one per line. You can have as many playlists as you like on a single floppy, so for instance, you could store an artist’s entire discography on one disk!
@@ -76,7 +83,7 @@ Create a file called playlist.txt on the floppy disk.  In this file, paste links
 ![image](https://github.com/user-attachments/assets/06f141eb-6d48-44d5-9d3a-7d355fb2e0cc)
 
 
-![image](https://github.com/user-attachments/assets/2c4ceb7c-80a9-4c6d-9883-a0497ba6e972)
+
 
 
 ## Launch the App
@@ -115,6 +122,9 @@ Then...
 Set up your Spotify credentials.  
 Create a new app on the Spotify Developer Dashboard.  
 Obtain the CLIENT_ID and CLIENT_SECRET, and configure them in the .env file.  
+
+![image](https://github.com/user-attachments/assets/a8930042-304d-42af-b994-c2e5705816dd)
+
 Insert a floppy disk and create a playlist.txt file containing Spotify playlist URLs.  
 Run the app and enjoy your FLOPPIFY retro playlist loader!
 
