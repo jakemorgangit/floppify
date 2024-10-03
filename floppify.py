@@ -355,7 +355,7 @@ class GradientCanvas(tk.Canvas):
 
 class CustomTitleBar(tk.Frame):
     def __init__(self, master, *args, **kwargs):
-        super().__init__(master, bg='#1f1f2e')  
+        super().__init__(master, bg='#191925')  
         self.master = master
         self.init_widgets()
         self.bind_events()
@@ -366,18 +366,18 @@ class CustomTitleBar(tk.Frame):
             logo_image = Image.open("./images/floppify_logo.png").convert("RGBA")
             logo_image = logo_image.resize((30, 30), Image.Resampling.LANCZOS)
             self.logo_photo = ImageTk.PhotoImage(logo_image)
-            self.logo_label = tk.Label(self, image=self.logo_photo, bg='#1f1f2e')
+            self.logo_label = tk.Label(self, image=self.logo_photo, bg='#191925')
             self.logo_label.pack(side='left', padx=5)
         except FileNotFoundError:
-            self.logo_label = tk.Label(self, text="FLOPPIFY", bg='#1f1f2e', fg='white', font=('Arial', 12, 'bold'))
+            self.logo_label = tk.Label(self, text="FLOPPIFY", bg='#191925', fg='white', font=('Arial', 12, 'bold'))
             self.logo_label.pack(side='left', padx=5)
 
         # Window Title
-        self.title_label = tk.Label(self, text="FLOPPIFY", bg='#1f1f2e', fg='white', font=('LED Dot-Matrix', 12))
+        self.title_label = tk.Label(self, text="FLOPPIFY", bg='#191925', fg='white', font=('LED Dot-Matrix', 12))
         self.title_label.pack(side='left', padx=5)
 
         # Spacer
-        self.spacer = tk.Label(self, bg='#1f1f2e')
+        self.spacer = tk.Label(self, bg='#191925')
         self.spacer.pack(side='left', expand=True, fill='x')
 
         # Minimize and Close Buttons
@@ -385,18 +385,18 @@ class CustomTitleBar(tk.Frame):
             minimize_image = Image.open("./images/minimize.png").convert("RGBA")
             minimize_image = minimize_image.resize((20, 20), Image.Resampling.LANCZOS)
             self.minimize_photo = ImageTk.PhotoImage(minimize_image)
-            self.minimize_button = tk.Button(self, image=self.minimize_photo, bg='#1f1f2e', bd=0, activebackground='#006400', command=self.minimize_window)
+            self.minimize_button = tk.Button(self, image=self.minimize_photo, bg='#191925', bd=0, activebackground='#006400', command=self.minimize_window)
             self.minimize_button.pack(side='right', padx=2)
 
             close_image = Image.open("./images/close.png").convert("RGBA")
             close_image = close_image.resize((20, 20), Image.Resampling.LANCZOS)
             self.close_photo = ImageTk.PhotoImage(close_image)
-            self.close_button = tk.Button(self, image=self.close_photo, bg='#1f1f2e', bd=0, activebackground='#006400', command=self.master.destroy)
+            self.close_button = tk.Button(self, image=self.close_photo, bg='#191925', bd=0, activebackground='#006400', command=self.master.destroy)
             self.close_button.pack(side='right', padx=2)
         except FileNotFoundError:
-            self.minimize_button = tk.Button(self, text="_", bg='#1f1f2e', fg='white', bd=0, command=self.minimize_window)
+            self.minimize_button = tk.Button(self, text="_", bg='#191925', fg='white', bd=0, command=self.minimize_window)
             self.minimize_button.pack(side='right', padx=2)
-            self.close_button = tk.Button(self, text="X", bg='#1f1f2e', fg='white', bd=0, command=self.master.destroy)
+            self.close_button = tk.Button(self, text="X", bg='#191925', fg='white', bd=0, command=self.master.destroy)
             self.close_button.pack(side='right', padx=2)
 
     def bind_events(self):
@@ -502,9 +502,9 @@ class FloppifyPlayer:
         # ----------------------------
         # Track Information
         track_frame = tk.Frame(self.right_frame, bg='#1f1f2e')
-        track_frame.pack(anchor='nw', pady=(10,5), fill='x')
+        track_frame.pack(anchor='nw', pady=(10,0), fill='x')
 
-        track_static = tk.Label(track_frame, text='TRK:', font=label_font, fg='#00FF00', bg='#1f1f2e')
+        track_static = tk.Label(track_frame, text='TRK:', font=label_font, fg='cyan', bg='#1f1f2e')
         track_static.pack(side='left', padx=5)
 
         self.track_marquee = Marquee(track_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
@@ -512,9 +512,9 @@ class FloppifyPlayer:
 
         # Artist Information
         artist_frame = tk.Frame(self.right_frame, bg='#1f1f2e')
-        artist_frame.pack(anchor='nw', pady=5, fill='x')
+        artist_frame.pack(anchor='nw', pady=0, fill='x')
 
-        artist_static = tk.Label(artist_frame, text='ART:', font=label_font, fg='#00FF00', bg='#1f1f2e')
+        artist_static = tk.Label(artist_frame, text='ART:', font=label_font, fg='cyan', bg='#1f1f2e')
         artist_static.pack(side='left', padx=5)
 
         self.artist_marquee = Marquee(artist_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
@@ -522,9 +522,9 @@ class FloppifyPlayer:
 
         # Album Information
         album_frame = tk.Frame(self.right_frame, bg='#1f1f2e')
-        album_frame.pack(anchor='nw', pady=5, fill='x')
+        album_frame.pack(anchor='nw', pady=0, fill='x')
 
-        album_static = tk.Label(album_frame, text='ALB:', font=label_font, fg='#00FF00', bg='#1f1f2e')
+        album_static = tk.Label(album_frame, text='ALB:', font=label_font, fg='cyan', bg='#1f1f2e')
         album_static.pack(side='left', padx=5)
 
         self.album_marquee = Marquee(album_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
@@ -536,14 +536,14 @@ class FloppifyPlayer:
         info_frame = tk.Frame(self.right_frame, bg='#1f1f2e')
         info_frame.pack(anchor='nw', pady=5, fill='x')
 
-        kbps_label = tk.Label(info_frame, text='KBPS:', font=label_font, fg='#00FF00', bg='#1f1f2e')
+        kbps_label = tk.Label(info_frame, text='KBPS:', font=label_font, fg='cyan', bg='#1f1f2e')
         kbps_label.pack(side='left', padx=5)
 
         self.kbps_var = tk.StringVar(value="190")
-        self.kbps_display = tk.Label(info_frame, textvariable=self.kbps_var, font=text_font, fg='#00FF00', bg='#1f0303031f2e')
+        self.kbps_display = tk.Label(info_frame, textvariable=self.kbps_var, font=text_font, fg='#00FF00', bg='#030303')
         self.kbps_display.pack(side='left', padx=5)
 
-        khz_label = tk.Label(info_frame, text='KHZ:', font=label_font, fg='#00FF00', bg='#1f1f2e')
+        khz_label = tk.Label(info_frame, text='KHZ:', font=label_font, fg='cyan', bg='#1f1f2e')
         khz_label.pack(side='left', padx=15)
 
         self.khz_var = tk.StringVar(value="44")
@@ -789,7 +789,7 @@ class FloppifyPlayer:
                     self.is_playing = True
 
                     # Update kbps and kHz (Set to fixed values as per user instruction)
-                    self.kbps_var.set("192")
+                    self.kbps_var.set("190")
                     self.khz_var.set("44")
 
                     # Update Volume Segments and enforce app's volume control
