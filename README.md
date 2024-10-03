@@ -11,6 +11,8 @@ Retro Floppy Disk Spotify Playlist Loader
 
 Edit: After an overwhelming demand (well, more than one person), I’m now adding a Winamp-style equaliser to Floppify. Clearly, it wasn’t quite retro enough. Stay tuned for some serious 90s throwback action.
 
+No, I can't do Milkdrop Vis!! 
+
 ## Introduction
 Growing up in the '90s, I have vivid memories of 3.5" floppy disks. They were the go-to storage format of the time, though far too small to store actual music files (only 1.44MB per disk!). Back then, we relied on cassette tapes and later CDs for our music—though I can't even recall the last time I used a CD.
 
