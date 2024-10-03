@@ -355,7 +355,7 @@ class GradientCanvas(tk.Canvas):
 
 class CustomTitleBar(tk.Frame):
     def __init__(self, master, *args, **kwargs):
-        super().__init__(master, bg='#008000')  #  green
+        super().__init__(master, bg='#1f1f2e')  
         self.master = master
         self.init_widgets()
         self.bind_events()
@@ -366,18 +366,18 @@ class CustomTitleBar(tk.Frame):
             logo_image = Image.open("./images/floppify_logo.png").convert("RGBA")
             logo_image = logo_image.resize((30, 30), Image.Resampling.LANCZOS)
             self.logo_photo = ImageTk.PhotoImage(logo_image)
-            self.logo_label = tk.Label(self, image=self.logo_photo, bg='#008000')
+            self.logo_label = tk.Label(self, image=self.logo_photo, bg='#1f1f2e')
             self.logo_label.pack(side='left', padx=5)
         except FileNotFoundError:
-            self.logo_label = tk.Label(self, text="Floppify", bg='#008000', fg='white', font=('Arial', 12, 'bold'))
+            self.logo_label = tk.Label(self, text="FLOPPIFY", bg='#1f1f2e', fg='white', font=('Arial', 12, 'bold'))
             self.logo_label.pack(side='left', padx=5)
 
         # Window Title
-        self.title_label = tk.Label(self, text="FLOPPIFY", bg='#008000', fg='white', font=('LED Dot-Matrix', 12))
+        self.title_label = tk.Label(self, text="FLOPPIFY", bg='#1f1f2e', fg='white', font=('LED Dot-Matrix', 12))
         self.title_label.pack(side='left', padx=5)
 
         # Spacer
-        self.spacer = tk.Label(self, bg='#008000')
+        self.spacer = tk.Label(self, bg='#1f1f2e')
         self.spacer.pack(side='left', expand=True, fill='x')
 
         # Minimize and Close Buttons
@@ -385,18 +385,18 @@ class CustomTitleBar(tk.Frame):
             minimize_image = Image.open("./images/minimize.png").convert("RGBA")
             minimize_image = minimize_image.resize((20, 20), Image.Resampling.LANCZOS)
             self.minimize_photo = ImageTk.PhotoImage(minimize_image)
-            self.minimize_button = tk.Button(self, image=self.minimize_photo, bg='#008000', bd=0, activebackground='#006400', command=self.minimize_window)
+            self.minimize_button = tk.Button(self, image=self.minimize_photo, bg='#1f1f2e', bd=0, activebackground='#006400', command=self.minimize_window)
             self.minimize_button.pack(side='right', padx=2)
 
             close_image = Image.open("./images/close.png").convert("RGBA")
             close_image = close_image.resize((20, 20), Image.Resampling.LANCZOS)
             self.close_photo = ImageTk.PhotoImage(close_image)
-            self.close_button = tk.Button(self, image=self.close_photo, bg='#008000', bd=0, activebackground='#006400', command=self.master.destroy)
+            self.close_button = tk.Button(self, image=self.close_photo, bg='#1f1f2e', bd=0, activebackground='#006400', command=self.master.destroy)
             self.close_button.pack(side='right', padx=2)
         except FileNotFoundError:
-            self.minimize_button = tk.Button(self, text="_", bg='#008000', fg='white', bd=0, command=self.minimize_window)
+            self.minimize_button = tk.Button(self, text="_", bg='#1f1f2e', fg='white', bd=0, command=self.minimize_window)
             self.minimize_button.pack(side='right', padx=2)
-            self.close_button = tk.Button(self, text="X", bg='#008000', fg='white', bd=0, command=self.master.destroy)
+            self.close_button = tk.Button(self, text="X", bg='#1f1f2e', fg='white', bd=0, command=self.master.destroy)
             self.close_button.pack(side='right', padx=2)
 
     def bind_events(self):
@@ -437,7 +437,7 @@ class CustomTitleBar(tk.Frame):
 class FloppifyPlayer:
     def __init__(self, master):
         self.master = master
-        # Set window size to 800x450 and prevent resizing
+        # Set window size to 550x450 and allow resizing
         self.master.geometry("550x450")
         self.master.resizable(True, True)
         self.master.overrideredirect(True)  # Remove default window decorations
@@ -463,6 +463,7 @@ class FloppifyPlayer:
         # Layout Frames with Reverse Bevel
         # ------------------------
         bevel_options = {'relief': 'sunken', 'bd': 2, 'bg': '#1f1f2e'}  # Dark grey background
+        bevel_options_text = {'relief': 'sunken', 'bd': 2, 'bg': '#191925'}  # Dark grey background
 
         self.right_frame = tk.Frame(master, **bevel_options)
         self.right_frame.place(x=230, y=60, width=300, height=200)
@@ -481,7 +482,7 @@ class FloppifyPlayer:
             floppy_image = floppy_image.resize((200, 200), Image.Resampling.LANCZOS)
             self.floppy_photo = ImageTk.PhotoImage(floppy_image)
             # Place floppy_label directly on the gradient canvas with dark grey background
-            self.floppy_label = tk.Label(master, image=self.floppy_photo,  **bevel_options)
+            self.floppy_label = tk.Label(master, image=self.floppy_photo, bg='#1f1f2e', relief='sunken', bd=1)
             self.floppy_label.image = self.floppy_photo  # Prevent garbage collection
             # Position the floppy_label at (120, 160)
             self.gradient.create_window(120, 160, window=self.floppy_label)
@@ -506,7 +507,7 @@ class FloppifyPlayer:
         track_static = tk.Label(track_frame, text='TRK:', font=label_font, fg='#00FF00', bg='#1f1f2e')
         track_static.pack(side='left', padx=5)
 
-        self.track_marquee = Marquee(track_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#1f1f2e')
+        self.track_marquee = Marquee(track_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
         self.track_marquee.pack(side='left', padx=5)
 
         # Artist Information
@@ -516,7 +517,7 @@ class FloppifyPlayer:
         artist_static = tk.Label(artist_frame, text='ART:', font=label_font, fg='#00FF00', bg='#1f1f2e')
         artist_static.pack(side='left', padx=5)
 
-        self.artist_marquee = Marquee(artist_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#1f1f2e')
+        self.artist_marquee = Marquee(artist_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
         self.artist_marquee.pack(side='left', padx=5)
 
         # Album Information
@@ -526,7 +527,7 @@ class FloppifyPlayer:
         album_static = tk.Label(album_frame, text='ALB:', font=label_font, fg='#00FF00', bg='#1f1f2e')
         album_static.pack(side='left', padx=5)
 
-        self.album_marquee = Marquee(album_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#1f1f2e')
+        self.album_marquee = Marquee(album_frame, text='', font=text_font, width=25, fg='#00FF00', bg='#030303')
         self.album_marquee.pack(side='left', padx=5)
 
         # ------------------------
@@ -539,14 +540,14 @@ class FloppifyPlayer:
         kbps_label.pack(side='left', padx=5)
 
         self.kbps_var = tk.StringVar(value="190")
-        self.kbps_display = tk.Label(info_frame, textvariable=self.kbps_var, font=text_font, fg='#00FF00', bg='#1f1f2e')
+        self.kbps_display = tk.Label(info_frame, textvariable=self.kbps_var, font=text_font, fg='#00FF00', bg='#1f0303031f2e')
         self.kbps_display.pack(side='left', padx=5)
 
         khz_label = tk.Label(info_frame, text='KHZ:', font=label_font, fg='#00FF00', bg='#1f1f2e')
         khz_label.pack(side='left', padx=15)
 
         self.khz_var = tk.StringVar(value="44")
-        self.khz_display = tk.Label(info_frame, textvariable=self.khz_var, font=text_font, fg='#00FF00', bg='#1f1f2e')
+        self.khz_display = tk.Label(info_frame, textvariable=self.khz_var, font=text_font, fg='#00FF00', bg='#030303')
         self.khz_display.pack(side='left', padx=5)
 
         # ----------------------------
@@ -572,7 +573,7 @@ class FloppifyPlayer:
         segment_height = 20
         spacing = 2
         for i in range(11):
-            frame = tk.Frame(volume_frame, width=segment_width, height=segment_height, bg='grey', relief='raised', bd=1)
+            frame = tk.Frame(volume_frame, width=segment_width, height=segment_height, bg='#1f1f2e', relief='raised', bd=1)
             frame.pack(side='left', padx=1)
             self.volume_segments.append(frame)
 
@@ -596,18 +597,15 @@ class FloppifyPlayer:
         # ----------------------------
         # Load button images
         try:
-
             self.prev_img = ImageTk.PhotoImage(Image.open("./images/previous.png").resize((50, 40), Image.Resampling.LANCZOS))
             self.play_img = ImageTk.PhotoImage(Image.open("./images/play.png").resize((50, 40), Image.Resampling.LANCZOS))
-            self.pause_img = ImageTk.PhotoImage(Image.open("images/pause.png").resize((50, 40), Image.Resampling.LANCZOS))
+            self.pause_img = ImageTk.PhotoImage(Image.open("./images/pause.png").resize((50, 40), Image.Resampling.LANCZOS))
             self.next_img = ImageTk.PhotoImage(Image.open("./images/next.png").resize((50, 40), Image.Resampling.LANCZOS))
             self.shuffle_img = ImageTk.PhotoImage(Image.open("./images/shuffle.png").resize((120, 30), Image.Resampling.LANCZOS))
             self.loop_img = ImageTk.PhotoImage(Image.open("./images/loop.png").resize((60, 30), Image.Resampling.LANCZOS))
         except FileNotFoundError as e:
             messagebox.showerror("Image Error", f"Button image not found: {e}")
             return
-
-
 
         # Previous Button
         self.prev_button = tk.Button(
@@ -630,8 +628,7 @@ class FloppifyPlayer:
         )
         self.next_button.pack(side='left', padx=1)
 
-
-                # Shuffle Button
+        # Shuffle Button
         self.shuffle_button = tk.Button(
             self.buttons_frame, image=self.shuffle_img, bg='#1f1f2e', bd=0, activebackground='#696969',
             command=self.toggle_shuffle
@@ -649,7 +646,7 @@ class FloppifyPlayer:
         # Log Frame: Console/Message Log
         # ----------------------------
         # Create a Text widget for logs (read-only)
-        self.log_text = tk.Text(self.log_frame, height=5, width=95, bg='#00FF00', fg='#000000', state='disabled', bd=0, wrap='word', font=('LED Dot-Matrix', 12))
+        self.log_text = tk.Text(self.log_frame, height=5, width=95, bg='#000000', fg='lime', state='disabled', bd=0, wrap='word', font=('LED Dot-Matrix', 12))
         self.log_text.pack()
 
         # Initialize log history
@@ -719,20 +716,22 @@ class FloppifyPlayer:
                 color = self.get_gradient_color(i)
                 self.volume_segments[i].config(bg=color)
             else:
-                self.volume_segments[i].config(bg='grey')
+                self.volume_segments[i].config(bg='#1f1f2e')
 
     def get_gradient_color(self, segment):
         """Returns a color based on the segment index for gradient effect."""
-        if segment <= 3:
-            return '#006400'  # Dark green
-        elif 4 <= segment <= 6:
-            return '#00FF00'  # Light green
+        if 0 <= segment <= 2:
+                return '#006400'  # Dark green for first 3 segments
+        elif 3 <= segment <= 4:
+                return '#00FF00'  # Light green for next 2 segments
+        elif 5 <= segment <= 6:
+                return '#FFFF00'  # Yellow for next 2 segments
         elif 7 <= segment <= 8:
-            return '#FFFF00'  # Yellow
+                return '#FFA500'  # Orange for next 2 segments
         elif 9 <= segment <= 10:
-            return '#FFA500'  # Orange
+                return '#FF0000'  # Red for last 2 segments
         else:
-            return '#FF0000'  # Red
+                return '#FF0000'  # Default to Red if out of range
 
     # ----------------------------
     # GUI Update Loop
@@ -817,11 +816,6 @@ class FloppifyPlayer:
                     # Update kbps and kHz
                     self.kbps_var.set("N/A")
                     self.khz_var.set("N/A")
-
-                    # Update Volume Segments and enforce app's volume control
-                    if self.current_volume != 0:
-                        log_message(f"Spotify volume changed externally to {self.current_volume}%, resetting to 0%")
-                        self.set_volume(0)
             else:
                 # No playback information available
                 self.track_marquee.set_text('Not available')
@@ -841,12 +835,6 @@ class FloppifyPlayer:
                 self.kbps_var.set("N/A")
                 self.khz_var.set("N/A")
 
-                # Update Volume Segments and enforce app's volume control
-                if self.current_volume != 0:
-                    log_message(f"Spotify volume changed externally to {self.current_volume}%, resetting to 0%")
-                    self.set_volume(0)
-
-            # Update Volume Segments (already handled above)
         except Exception as e:
             log_message(f"Error in update_gui: {e}")
         # Schedule the next update
