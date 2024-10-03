@@ -38,14 +38,17 @@ Put in another disk and process repeats.  It's all pretty simple :)
 
 # The GUI
 
-No Disk
-
-![image](https://github.com/user-attachments/assets/2cd5b9df-9416-499b-b002-8c861e0eb062)
-
+I attempted to style it in honour of the iconic and recently "open sourced" Winamp :D
+https://github.com/WinampDesktop/winamp
 
 With Disk
 
-![image](https://github.com/user-attachments/assets/4861efa1-56ea-4fed-8283-f1b6d37fa841)
+![image](https://github.com/user-attachments/assets/f22db6c7-d9fb-4664-b4a9-9b93623005db)
+
+
+No Disk
+
+![image](https://github.com/user-attachments/assets/3b5f5afb-055d-445e-a0fd-b67e271e31ac)
 
 
 I should mention that the gui isn't actually required, the entire thing can run silently, but I thought `why not` !
