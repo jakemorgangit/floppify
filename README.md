@@ -40,11 +40,13 @@ Put in another disk and process repeats.  It's all pretty simple :)
 
 No Disk
 
-![image](https://github.com/user-attachments/assets/96d0027e-8d72-41b2-a1ab-7f9e689da4ab)
+![image](https://github.com/user-attachments/assets/2cd5b9df-9416-499b-b002-8c861e0eb062)
+
 
 With Disk
 
-![image](https://github.com/user-attachments/assets/7b84f136-3383-4f03-9c5e-6c15ba656cd3)
+![image](https://github.com/user-attachments/assets/4861efa1-56ea-4fed-8283-f1b6d37fa841)
+
 
 I should mention that the gui isn't actually required, the entire thing can run silently, but I thought `why not` !
 
