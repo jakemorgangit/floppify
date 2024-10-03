@@ -1,5 +1,9 @@
 #  Floppify
 Retro Floppy Disk Spotify Playlist Loader
+
+
+![image](https://github.com/user-attachments/assets/3cafe9cd-adf0-419c-94ca-4aaf95a3bf28)
+
 ![image](https://github.com/user-attachments/assets/f3f39165-b441-4082-a689-d17864cc7be2)
 
 
